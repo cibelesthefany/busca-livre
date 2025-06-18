@@ -52,6 +52,8 @@ class SearchActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+        viewModel.onQueryChanged(etSearch.text.toString())
+
         btnSearch.setOnClickListener {
             val query = etSearch.text.toString().trim()
             val category = viewModel.validateQuery(query)
